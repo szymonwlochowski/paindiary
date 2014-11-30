@@ -34,4 +34,7 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+  # an example of default_url_options appropriate for a development environment
+  config.action_mailer.default_url_options = { host: 'paindiary.dev', port: 3000 }
 end
