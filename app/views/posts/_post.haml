@@ -1,2 +1,4 @@
 %h2= link_to_unless_current post.title, post
 = simple_format post.body
+- post.descriptions.each do |d|
+  %p= d.name

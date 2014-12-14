@@ -1,0 +1,6 @@
+.row
+  - @descriptions.each do |d|
+    %p
+      = d.name
+      = link_to '(edit)', edit_description_path(d)
+

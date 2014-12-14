@@ -6,5 +6,15 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
-    = render 'shared/alerts'
-    = yield
+    %nav.navbar.navbar-default
+      .container-fluid
+        .navbar-header
+          = link_to 'home', root_path, class: 'navbar-brand'
+          %span.navbar-brand= ' | '
+          = link_to 'users', users_path, class: 'navbar-brand'
+          %span.navbar-brand= ' | '
+          = link_to 'descriptions', descriptions_path, class: 'navbar-brand'
+
+    .container
+      = render 'shared/alerts'
+      = yield
