@@ -1,7 +1,7 @@
 %h1 All users in my app
 
 %ul
-  - @users.each do |u|
+  - users.each do |u|
     %li
       = u.email
       = link_to 'show', user_path(u)
