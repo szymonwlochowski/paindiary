@@ -22,6 +22,12 @@ class DescriptionsController < ApplicationController
     @description = Description.find(params[:id])
   end
 
+  def destroy
+    @description = Description.find(params[:id])
+    @description.destroy
+    respond_with(@description)
+  end
+
   def update
     @description = Description.find(params[:id])
     @description.update(description_params)
