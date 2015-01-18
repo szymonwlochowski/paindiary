@@ -1,11 +1,11 @@
-= simple_form_for(@post, html: { class: "form-vertical" }) do |f|
+= simple_form_for(post, html: { class: "form-vertical" }) do |f|
   = f.error_notification
 
   .form-inputs
   = f.input :title
   = f.input :body
   = f.input :time, as: :datetime
-  = f.input :pain_level, collection: 0..20
+  = f.input :pain_level, collection: 0..10
   = f.input :comments, as: :text
   = f.input :meds, as: :text
   = f.input :non_drugs, as: :text

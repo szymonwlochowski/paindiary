@@ -1,6 +1,16 @@
 %h1 Listing posts
 
--# binding.pry
-= render partial: 'post', collection: @posts
-= link_to 'New Post', new_post_path
-= link_to 'Home', root_path
+= '###'
+= link_to 'All entries', posts_path
+|
+= link_to 'Last week', posts_path(period: 'week')
+|
+= link_to 'Last mont', posts_path(period: 'month')
+= '###'
+
+= render partial: 'post', collection: posts
+
+= paginate posts
+
+%p= link_to 'New Post', new_post_path
+%p= link_to 'Home', root_path
