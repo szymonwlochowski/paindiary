@@ -5,7 +5,9 @@
 |
 = link_to 'Last week', posts_path(period: 'week')
 |
-= link_to 'Last mont', posts_path(period: 'month')
+= link_to 'Last month', posts_path(period: 'month')
+|
+= link_to 'Last year', posts_path(period: 'year')
 = '###'
 
 = render partial: 'post', collection: posts
