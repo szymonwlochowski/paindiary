@@ -16,10 +16,12 @@ gem 'spring',        group: :development
 gem 'bootstrap-sass'
 gem 'haml-rails'
 gem 'high_voltage'
+gem 'kaminari'
 gem 'pg'
 gem 'simple_form'
 gem 'therubyracer', :platform=>:ruby
 gem 'thin'
+gem 'squeel'
 gem 'devise'
 gem 'devise-bootstrap-views'
 
