@@ -10,9 +10,14 @@
 = link_to 'Last year', posts_path(period: 'year')
 = '###'
 
+%br
+%br
+
+=link_to new_post_path, class: 'btn btn-primary' do
+  %span.glyphicon.glyphicon-pencil{"aria-hidden" => "true"}
+  New post
+
 = render partial: 'post', collection: posts
 
 = paginate posts
 
-%p= link_to 'New Post', new_post_path
-%p= link_to 'Home', root_path

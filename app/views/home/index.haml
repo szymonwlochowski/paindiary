@@ -1,4 +1,8 @@
 %h1 Hello.
 
-%p= link_to "New post.", new_post_path
-%p= link_to "Log me out.", destroy_user_session_path
+=link_to new_post_path, class: 'btn btn-primary btn-lg' do
+  %span.glyphicon.glyphicon-pencil{"aria-hidden" => "true"}
+  New post
+=link_to destroy_user_session_path, class: 'btn btn-danger btn-lg' do
+  %span.glyphicon.glyphicon-log-out{"aria-hidden" => "true"}
+  Log out.

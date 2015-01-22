@@ -1,7 +1,14 @@
-%p= link_to "New description of sth", new_description_path
+= link_to new_description_path, class: 'btn btn-primary' do
+  %span.glyphicon.glyphicon-pencil{"aria-hidden" => "true"}
+  New description
+%p
 .row
   - @descriptions.each do |d|
     %p
       = d.name
-      = link_to '(edit)', edit_description_path(d)
-      = link_to '(delete)', description_path(d), method: :delete
+      = link_to edit_description_path(d), class: 'btn btn-info btn-xs' do
+        %span.glyphicon.glyphicon-edit{"aria-hidden" => "true"}
+        edit
+      = link_to description_path(d), class: 'btn btn-danger btn-xs', method: :delete do
+        %span.glyphicon.glyphicon-remove{"aria-hidden" => "true"}
+        delete
