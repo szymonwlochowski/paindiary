@@ -29,8 +29,22 @@
               %a{:href => posts_path} posts
             %li
               %a{:href => descriptions_path} descriptions
-            %li
-              %a{:href => edit_user_registration_path} profile
+          %ul.nav.navbar-nav.navbar-right
+            %li.dropdown
+              %a.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+                my account
+                %span.caret
+              %ul.dropdown-menu{:role => "menu"}
+                %li
+                  %a{:href => edit_user_registration_path} edit
+                %li
+                  %a{:href => destroy_user_session_path} log out
+                %li.divider
+                %li
+                  %a light theme
+                %li
+                  %a dark theme
+              /%a{:href => edit_user_registration_path} profile
 
     .container
       = render 'shared/alerts'
