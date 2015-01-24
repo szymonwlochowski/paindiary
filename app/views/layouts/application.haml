@@ -41,9 +41,9 @@
                   %a{:href => destroy_user_session_path} log out
                 %li.divider
                 %li
-                  %a light theme
+                  %a.theme-link{"data-theme" => "flatly", :href => "#"} Light theme
                 %li
-                  %a dark theme
+                  %a.theme-link{"data-theme" => "darkly", :href => "#"} Dark theme
               /%a{:href => edit_user_registration_path} profile
 
     .container
