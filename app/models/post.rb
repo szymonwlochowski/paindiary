@@ -17,4 +17,5 @@ class Post < ActiveRecord::Base
       where{created_at.gteq 1.year.ago}
     end
   }
+
 end

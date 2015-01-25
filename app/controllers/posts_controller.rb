@@ -2,6 +2,7 @@ class PostsController < ApplicationController
 
   expose(:post)
   expose(:posts) { Post.order(:created_at).range(params[:period]).page(params[:page]) }
+  expose(:nowaku) { Post.all.order(created_at: :desc) }
 
   def create
     post = Post.new(post_params)
