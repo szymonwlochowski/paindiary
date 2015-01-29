@@ -1,10 +1,9 @@
 /*
  *= require_self
- *= require posts
  *= require devise_bootstrap_views
  */
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-body { padding-top: 70px; }
+body { padding-top: 100px; }

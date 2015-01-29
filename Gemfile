@@ -18,12 +18,15 @@ gem 'haml-rails'
 gem 'high_voltage'
 gem 'kaminari'
 gem 'pg'
+gem 'liquid'
 gem 'simple_form'
 gem 'therubyracer', :platform=>:ruby
 gem 'thin'
 gem 'squeel'
 gem 'devise'
 gem 'devise-bootstrap-views'
+gem 'twitter-bootswatch-rails', github: 'scottvrosenthal/twitter-bootswatch-rails'
+gem 'less-rails'
 
 group :development do
   gem 'better_errors'

@@ -1,0 +1,7 @@
+- if current_user.present?
+  %li
+    = link_to "Custom", update_layout_user_path(current_user, layout: 'custom'), method: :put
+  %li
+    = link_to "Standard", update_layout_user_path(current_user, layout: 'application'), method: :put
+  %li
+    = link_to "Dark", update_layout_user_path(current_user, layout: 'darkly'), method: :put

@@ -6,6 +6,8 @@
     = f.input :city
     = f.input :sex, as: :select, collection: [['Man', true], ['Woman', false]], include_blank:false, label: 'Sex'
     = f.input :email, required: true, autofocus: true
+    = f.input :layout_name, as: :select, collection: [['Standard', 'application'], ['Custom #1', 'custom']], include_blank: false
+    = f.input :custom_layout, as: :text
     - if devise_mapping.confirmable? && resource.pending_reconfirmation?
       %p
         Currently waiting confirmation for: #{resource.unconfirmed_email}
