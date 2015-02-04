@@ -5,7 +5,7 @@ class UsersController < ApplicationController
 
   def update_layout
     user.update_attributes(layout_name: params[:layout])
-    redirect_to root_path, notice: 'well done Hose'
+    redirect_to root_path, notice: 'well done ese'
   end
 
   private
