@@ -2,6 +2,7 @@
 %html
   %head
     %title Paindiary
+    %meta{:content => "width=device-width, initial-scale=1, maximum-scale=1", :name => "viewport"}
     - if current_user.present?
       = stylesheet_link_tag (current_user.layout_name || 'application'), media: 'all', 'data-turbolinks-track' => true
     - else
