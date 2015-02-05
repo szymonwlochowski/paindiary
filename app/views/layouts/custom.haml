@@ -3,6 +3,7 @@
 %html
   %head
     %title Paindiary
+    %meta{:content => "width=device-width, initial-scale=1, maximum-scale=1", :name => "viewport"}
     = stylesheet_link_tag 'custom', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
@@ -20,7 +21,7 @@
         #bs-example-navbar-collapse-1.collapse.navbar-collapse
           %ul.nav.navbar-nav
             %li
-              %a{:href => root_path} home
+              %a{:href => root_path} flat
             %li
               %a{:href => users_path} users
             %li
@@ -40,6 +41,6 @@
                 %li.divider
                 = render 'layouts/layout_menu'
 
-    .container
+    .container-fluid
       = render 'shared/alerts'
       = yield

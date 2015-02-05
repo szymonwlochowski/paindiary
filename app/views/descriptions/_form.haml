@@ -5,4 +5,7 @@
   = f.input :name
 
   .form-actions
-  = f.button :submit
+  = f.button :submit, {:class => 'btn btn-primary'}
+  = link_to descriptions_path, class: 'btn btn-danger' do
+    %span.glyphicon.glyphicon-remove{"aria-hidden" => "true"}
+    Discard

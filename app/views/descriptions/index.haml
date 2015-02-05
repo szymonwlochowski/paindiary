@@ -2,8 +2,9 @@
 = link_to new_description_path, class: 'btn btn-primary' do
   %span.glyphicon.glyphicon-pencil{"aria-hidden" => "true"}
   New description
-%p
-.row
+%br
+%br
+%row
   - @descriptions.each do |d|
     %p
       = d.name

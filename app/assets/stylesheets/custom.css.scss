@@ -1,9 +1,9 @@
-/*
- *= require_self
- *= require devise_bootstrap_views
- */
+/* Flatly
+* Bootswatch
+*= require_self
+*= require flatly/loader
+*= require flatly/bootswatch
+*/
 
-@import "bootstrap-sprockets";
-@import "bootstrap";
 
-body { padding-top: 100px; }
+body { padding-top: 50px}
