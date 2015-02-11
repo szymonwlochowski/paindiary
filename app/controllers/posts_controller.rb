@@ -7,10 +7,12 @@ class PostsController < ApplicationController
   def create
     post = Post.new(post_params)
     post.save
+    redirect_to posts_path
   end
 
   def update
     post.update(post_params)
+    redirect_to post_path(post)
   end
 
   private
