@@ -7,6 +7,6 @@
         .form-inputs
           = f.input :email, required: true, autofocus: true
         .form-actions
-          = f.button :submit, "Send me reset password instructions"
-          = link_to root_path, class: 'btn btn-default' do
+          = f.button :submit, "Reset", class: 'btn btn-success'
+          = link_to root_path, class: 'btn btn-default pull-right' do
             Back
