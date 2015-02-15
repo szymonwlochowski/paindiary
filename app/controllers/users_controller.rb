@@ -8,6 +8,11 @@ class UsersController < ApplicationController
     redirect_to root_path, notice: 'theme changed'
   end
 
+  def show
+    gon.posts_count = user.posts.count
+    gon.descriptions = Description.all.map(&:name)
+  end
+
   private
 
     def user_params

@@ -7,6 +7,7 @@
     = stylesheet_link_tag 'custom', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
+    = include_gon
   %body
     %nav.navbar.navbar-default.navbar-fixed-top
       .container-fluid
@@ -41,6 +42,6 @@
                 %li.divider
                 = render 'layouts/layout_menu'
 
-    .container-fluid
+    .container
       = render 'shared/alerts'
       = yield

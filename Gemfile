@@ -22,11 +22,13 @@ gem 'liquid'
 gem 'simple_form'
 gem 'therubyracer', :platform=>:ruby
 gem 'thin'
-gem 'squeel'
+gem 'squeel', github: 'danielrhodes/squeel'
 gem 'devise'
 gem 'devise-bootstrap-views'
 gem 'twitter-bootswatch-rails', github: 'scottvrosenthal/twitter-bootswatch-rails'
 gem 'less-rails'
+gem 'bootstrap_form'
+gem 'gon'
 
 group :development do
   gem 'better_errors'
