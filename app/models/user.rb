@@ -5,4 +5,11 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :posts
+
+  before_create :first_theme
+
+  def first_theme
+    self.layout_name = 'custom'
+  end
+
 end

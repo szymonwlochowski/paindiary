@@ -14,7 +14,9 @@ class ApplicationController < ActionController::Base
   private
 
     def set_layout
-      current_user.present? ? current_user.layout_name : 'application'
+      #current_user.present? ? current_user.layout_name : 'custom'
+      user_signed_in? ? current_user.layout_name : 'application'
     end
+
 
 end
