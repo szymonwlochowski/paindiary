@@ -6,13 +6,19 @@ class PostsController < ApplicationController
 
   def create
     post = Post.new(post_params)
-    post.save
-    redirect_to posts_path
+    if post.save
+      redirect_to posts_path
+    else
+      render :new
+    end
   end
 
   def update
-    post.update(post_params)
-    redirect_to post_path(post)
+    if post.update(post_params)
+      redirect_to post_path(post)
+    else
+      render :edit
+    end
   end
 
   private

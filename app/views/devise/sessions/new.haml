@@ -1,7 +1,12 @@
 .container-fixed
   .row
     .col-sm-6
-      %h2 Log in
+      %h2 Welcome to PainDiary.
+      %p.hidden-xs Something about the app (not visible on phones).
+      %p.hidden-xs Just two lines of some text to see how it will be displayed on the website.
+      %p.hidden-xs Last line.
+    .col-sm-6
+      %h2
       = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
         .form-inputs
           = f.input :email, required: false, autofocus: true

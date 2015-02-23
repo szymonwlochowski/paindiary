@@ -4,34 +4,34 @@
       = simple_form_for(post, :html => { class: 'form-horizontal' }) do |f|
         = f.error_notification
 
-        .form-inputs
+        -#.form-inputs
           .row
             = f.label :title, class: "control-label col-sm-2"
-            .col-sm-8= f.text_field :title, placeholder: "Your title", class: "form-control"
+            .col-sm-8= f.input :title, label: false, placeholder: "Your title", class: "form-control"
           .row
             = f.label :body, class: "control-label col-sm-2"
-            .col-sm-8= f.text_field :body, placeholder: "Your body", class: "form-control"
+            .col-sm-8= f.input :body, label: false, placeholder: "Your body", class: "form-control"
           .row
             = f.label :time, class: "control-label col-sm-2"
-            .col-sm-8= f.date_field :time, placeholder: "Your time", class: "form-control"
+            .col-sm-8= f.input :time, as: :datetime, label: false, placeholder: "Your time", class: "form-control"
           .row
             = f.label :pain_level, class: "control-label col-sm-2"
-            .col-sm-8= f.text_field :pain_level, placeholder: "Your pain_level", class: "form-control"
+            .col-sm-8= f.input :pain_level, collection: 0..10, label: false, placeholder: "Your pain_level", class: "form-control"
           .row
             = f.label :comments, class: "control-label col-sm-2"
-            .col-sm-8= f.text_field :comments, placeholder: "Your comments", class: "form-control"
+            .col-sm-8= f.input :comments, label: false, placeholder: "Your comments", class: "form-control"
           .row
             = f.label :meds, class: "control-label col-sm-2"
-            .col-sm-8= f.text_field :meds, placeholder: "Your meds", class: "form-control"
+            .col-sm-8= f.input :meds, label: false, placeholder: "Your meds", class: "form-control"
           .row
             = f.label :non_drugs, class: "control-label col-sm-2"
-            .col-sm-8= f.text_field :non_drugs, placeholder: "Your non_drugs", class: "form-control"
+            .col-sm-8= f.input :non_drugs, label: false, placeholder: "Your non_drugs", class: "form-control"
           .row
             = f.label :descriptions, class: "control-label col-sm-2"
-            .col-sm-8= f.association :descriptions , as: :check_boxes
+            .col-sm-8= f.association :descriptions, label: false, as: :check_boxes
 
 
-        -#.form-inputs
+        .form-inputs
           = f.input :title
           = f.input :body
           = f.input :time, as: :datetime
