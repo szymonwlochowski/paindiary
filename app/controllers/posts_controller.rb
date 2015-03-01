@@ -1,8 +1,12 @@
 class PostsController < ApplicationController
 
-  expose(:post)
+  expose(:post, attributes: :post_params)
   expose(:posts) { Post.order(:created_at).range(params[:period]).page(params[:page]) }
   expose(:nowaku) { Post.all.order(created_at: :desc) }
+
+  def new
+    post.assign_attributes(new_post_params || {})
+  end
 
   def create
     post = Post.new(post_params)
@@ -14,7 +18,7 @@ class PostsController < ApplicationController
   end
 
   def update
-    if post.update(post_params)
+    if post.save
       redirect_to post_path(post)
     else
       render :edit
@@ -23,8 +27,12 @@ class PostsController < ApplicationController
 
   private
 
+    def new_post_params
+      params.permit(:title) if params.present?
+    end
+
     def post_params
-      params.require(:post).permit(:title, :body, :description, :pain_level, :time, :comments, :meds, :non_drugs, {:description_ids => []})
+      params.require(:post).permit(:title, :body, :description, :pain_level, :time, :comments, :meds, :bodypart_id, :non_drugs, {:description_ids => []}) if params[:post].present?
     end
 
 end

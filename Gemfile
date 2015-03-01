@@ -30,6 +30,13 @@ gem 'less-rails'
 gem 'bootstrap_form'
 gem 'gon'
 
+gem 'nokogiri'
+
+gem 'groupdate'
+gem 'chartkick', '1.2.0'
+gem "highcharts-rails"
+gem 'lazy_high_charts'
+
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_21]

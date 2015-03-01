@@ -57,6 +57,7 @@ GEM
       sass (~> 3.2)
     bootstrap_form (2.2.0)
     builder (3.2.2)
+    chartkick (1.2.0)
     coderay (1.1.0)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
@@ -85,6 +86,8 @@ GEM
       json
       multi_json
       request_store (>= 1.0.5)
+    groupdate (2.4.0)
+      activesupport (>= 3)
     haml (4.1.0.beta.1)
       tilt
     haml-rails (0.5.3)
@@ -92,7 +95,10 @@ GEM
       activesupport (>= 4.0.1)
       haml (>= 3.1, < 5.0)
       railties (>= 4.0.1)
+    hash-deep-merge (0.1.1)
     high_voltage (2.2.1)
+    highcharts-rails (4.0.4.1)
+      railties (>= 3.1)
     hike (1.2.3)
     hpricot (0.8.6)
     html2haml (1.0.1)
@@ -111,6 +117,9 @@ GEM
     kaminari (0.16.1)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
+    lazy_high_charts (1.5.4)
+      bundler (>= 1.0)
+      hash-deep-merge
     less (2.6.0)
       commonjs (~> 0.2.7)
     less-rails (2.6.0)
@@ -122,8 +131,11 @@ GEM
       mime-types (>= 1.16, < 3)
     method_source (0.8.2)
     mime-types (2.4.3)
+    mini_portile (0.6.2)
     minitest (5.4.3)
     multi_json (1.10.1)
+    nokogiri (1.6.6.2)
+      mini_portile (~> 0.6.0)
     orm_adapter (0.5.0)
     pg (0.17.1)
     polyamorous (1.1.0)
@@ -222,19 +234,24 @@ DEPENDENCIES
   binding_of_caller
   bootstrap-sass
   bootstrap_form
+  chartkick (= 1.2.0)
   coffee-rails (~> 4.0.0)
   decent_exposure
   devise
   devise-bootstrap-views
   gon
+  groupdate
   haml-rails
   high_voltage
+  highcharts-rails
   html2haml
   jbuilder (~> 2.0)
   jquery-rails
   kaminari
+  lazy_high_charts
   less-rails
   liquid
+  nokogiri
   pg
   pry-rails
   quiet_assets

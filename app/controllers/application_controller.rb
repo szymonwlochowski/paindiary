@@ -5,6 +5,10 @@ class ApplicationController < ActionController::Base
   before_filter :configure_permitted_parameters, if: :devise_controller?
   layout :set_layout
 
+  decent_configuration do
+    strategy DecentExposure::StrongParametersStrategy
+  end
+
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:account_update) { |u|
       u.permit(:password, :password_confirmation, :current_password, :layout_name, :custom_layout, :city, :sex)
