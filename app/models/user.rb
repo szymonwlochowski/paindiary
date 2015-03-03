@@ -12,4 +12,8 @@ class User < ActiveRecord::Base
     self.layout_name = 'custom'
   end
 
+  def forem_name
+    email
+  end
+
 end

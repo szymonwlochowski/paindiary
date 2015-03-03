@@ -37,6 +37,9 @@ gem 'chartkick', '1.2.0'
 gem "highcharts-rails"
 gem 'lazy_high_charts'
 
+gem 'forem', :github => "radar/forem", :branch => "rails4"
+gem 'forem-bootstrap', :github => "radar/forem-bootstrap"
+
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_21]

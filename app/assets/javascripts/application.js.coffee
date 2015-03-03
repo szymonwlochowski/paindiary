@@ -7,7 +7,9 @@
 #= require highcharts
 #= require highcharts/highcharts-more
 #= require chartkick
+#= require forem
 #= require_tree .
+
 
 $ ->
 
