@@ -1,3 +1,5 @@
+require 'csv'
+
 class Post < ActiveRecord::Base
 
   belongs_to :user
@@ -34,6 +36,15 @@ class Post < ActiveRecord::Base
     posts = posts.group_by{ |p| p.pain_level }
     posts.map do |pain_level, value|
       value.group_by { |p| p.created_at.to_date }
+    end
+  end
+
+  def self.as_csv
+    CSV.generate do |csv|
+      csv << column_names
+      all.each do |item|
+        csv << item.attributes.values_at(*column_names)
+      end
     end
   end
 

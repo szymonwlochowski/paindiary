@@ -24,6 +24,15 @@ class PostsController < ApplicationController
     end
   end
 
+  def index
+    @post = Post.order(:created_at)
+
+    respond_to do |format|
+      format.html
+      format.csv { send_data @post.as_csv }
+    end
+  end
+
   private
 
     def new_post_params
