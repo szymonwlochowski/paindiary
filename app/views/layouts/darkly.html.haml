@@ -4,55 +4,12 @@
     %meta{:content => "width=device-width, initial-scale=1, maximum-scale=1", :name => "viewport"}
     %title Paindiary
     = stylesheet_link_tag 'darkly', media: 'all', 'data-turbolinks-track' => true
+    = stylesheet_link_tag 'forem', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
     = include_gon
   %body
-    %nav.navbar.navbar-default.navbar-fixed-top
-      .container-fluid
-        .navbar-header
-          %button.navbar-toggle.collapsed{"data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
-            %span.sr-only Toggle navigation
-            %span.icon-bar
-            %span.icon-bar
-            %span.icon-bar
-          %a.navbar-brand{:href => root_path}
-            %span.glyphicon.glyphicon-fire{"aria-hidden" => "true"}
-        #bs-example-navbar-collapse-1.collapse.navbar-collapse
-          %ul.nav.navbar-nav
-            %li
-              %a{:href => root_path}
-                %span.glyphicon.glyphicon-home
-                home
-            %li
-              %a{:href => users_path}
-                %span.glyphicon.glyphicon-user
-                users
-            %li
-              %a{:href => posts_path}
-                %span.glyphicon.glyphicon-file
-                posts
-            %li
-              %a{:href => descriptions_path}
-                %span.glyphicon.glyphicon-list
-                descriptions
-          %ul.nav.navbar-nav.navbar-right
-            %li.dropdown
-              %a.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#", :role => "button"}
-                %span.glyphicon.glyphicon-cog
-                settings
-                %span.caret
-              %ul.dropdown-menu{:role => "menu"}
-                %li
-                  %a{:href => edit_user_registration_path}
-                    %span.glyphicon.glyphicon-edit
-                    edit
-                %li
-                  %a{:href => destroy_user_session_path}
-                    %span.glyphicon.glyphicon-log-out
-                    log out
-                %li.divider
-                = render 'layouts/layout_menu'
+    = render 'layouts/navigation'
 
     .container
       = render 'shared/alerts'

@@ -9,6 +9,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'decent_exposure'
 gem 'pry-rails'
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
@@ -29,16 +30,19 @@ gem 'twitter-bootswatch-rails', github: 'scottvrosenthal/twitter-bootswatch-rail
 gem 'less-rails'
 gem 'bootstrap_form'
 gem 'gon'
-
+gem 'forem', :github => "radar/forem", :branch => "rails4"
+gem 'forem-bootstrap', github: "radar/forem-bootstrap"
+gem 'forem-redcarpet', github: "radar/forem-redcarpet"
+#gem 'bootstrap-datepicker-rails', :require => 'bootstrap-datepicker-rails', :git => 'git://github.com/Nerian/bootstrap-datepicker-rails.git'
 gem 'nokogiri'
+
+gem 'momentjs-rails', '>= 2.8.1'
+gem 'bootstrap3-datetimepicker-rails', '~> 4.0.0'
 
 gem 'groupdate'
 gem 'chartkick', '1.2.0'
 gem "highcharts-rails"
 gem 'lazy_high_charts'
-
-gem 'forem', :github => "radar/forem", :branch => "rails4"
-gem 'forem-bootstrap', :github => "radar/forem-bootstrap"
 
 group :development do
   gem 'better_errors'
@@ -52,4 +56,3 @@ end
 group :production do
   gem 'rails_12factor'
 end
-

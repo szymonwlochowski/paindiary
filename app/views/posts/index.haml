@@ -13,23 +13,15 @@
 
 %br
 
-=# line_chart posts.map{ |post| {name: post.created_at, data: post.pain_level}}
-= line_chart Bodypart.all.map{ |b| {name: b.name, data: b.posts.range(params[:period]).group_by_day(:created_at).sum(:pain_level)} }
-=# line_chart Post.sum_of_description_by_day(Time.now-30.days)
-=# line_chart Post.all.group_by_day(:created_at).count
-= line_chart Post.range(params[:period]).map{ |p| {name: p.bodypart.name, data: {p.created_at.to_date => p.pain_level}}}
-=# column_chart Post.all.group_by{ |p| p.created_at.to_date }.count
-=# area_chart Post.all.map{ |p| {p.pain_level => p.created_at.to_date} }
-=# pie_chart Post.group(:pain_level).count
-=# high_chart("mojwykres3", @chart)
+= line_chart Bodypart.all.map{ |b| {name: b.name, data: b.posts.group_by_day(:created_at).sum(:pain_level)} }
+
+= line_chart Post.all.map{ |p| {name: p.bodypart.name, data: {p.created_at.to_date => p.pain_level}}}
+
 %br
-//#mojwykres
-//#mojwykres2
-//#mojwykres3
 %br
 
 = link_to new_post_path, class: 'btn btn-primary' do
-  %span.glyphicon.glyphicon-pencil{"aria-hidden" => "true"}
+  %span.glyphicon.glyphicon-pencil{aria: {hidden: true}}
   New post
 
 = render partial: 'post', collection: posts
