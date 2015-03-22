@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 
 ruby '2.1.4'
-gem 'rails', '4.1.8'
+gem 'rails', '4.1.10'
 gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
@@ -12,8 +12,6 @@ gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
-gem 'sdoc', '~> 0.4.0',          group: :doc
-gem 'spring',        group: :development
 gem 'bootstrap-sass'
 gem 'haml-rails'
 gem 'high_voltage'
@@ -21,19 +19,18 @@ gem 'kaminari'
 gem 'pg'
 gem 'liquid'
 gem 'simple_form'
-gem 'therubyracer', :platform=>:ruby
+gem 'therubyracer', :platform => :ruby
 gem 'thin'
-gem 'squeel', github: 'danielrhodes/squeel'
+gem 'squeel'
 gem 'devise'
 gem 'devise-bootstrap-views'
 gem 'twitter-bootswatch-rails', github: 'scottvrosenthal/twitter-bootswatch-rails'
 gem 'less-rails'
 gem 'bootstrap_form'
 gem 'gon'
-gem 'forem', :github => "radar/forem", :branch => "rails4"
-gem 'forem-bootstrap', github: "radar/forem-bootstrap"
-gem 'forem-redcarpet', github: "radar/forem-redcarpet"
-#gem 'bootstrap-datepicker-rails', :require => 'bootstrap-datepicker-rails', :git => 'git://github.com/Nerian/bootstrap-datepicker-rails.git'
+gem 'forem', github: 'radar/forem', branch: 'rails4'
+gem 'forem-bootstrap', github: 'radar/forem-bootstrap'
+gem 'forem-redcarpet', github: 'radar/forem-redcarpet'
 gem 'nokogiri'
 
 gem 'momentjs-rails', '>= 2.8.1'
@@ -41,13 +38,14 @@ gem 'bootstrap3-datetimepicker-rails', '~> 4.0.0'
 
 gem 'groupdate'
 gem 'chartkick', '1.2.0'
-gem "highcharts-rails"
+gem 'highcharts-rails'
 gem 'lazy_high_charts'
 
 group :development do
   gem 'better_errors'
-  gem 'binding_of_caller', :platforms=>[:mri_21]
+  gem 'binding_of_caller', :platforms => [:mri_21]
   gem 'html2haml'
+  gem 'spring'
   gem 'quiet_assets'
   gem 'rails_apps_pages'
   gem 'rails_layout'
@@ -56,3 +54,4 @@ end
 group :production do
   gem 'rails_12factor'
 end
+
