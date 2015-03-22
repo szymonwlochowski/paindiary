@@ -1,8 +1,7 @@
 /*
  *= require_self
- *= require posts
  *= require flatly/loader
- *= require flatly/bootswatch
+ *= require posts
  *= require jquery-ui/datepicker
  */
 
@@ -10,5 +9,6 @@
 @import "bootstrap";
 @import 'bootstrap-datetimepicker';
 @import 'forem/base';
+
 
 body { padding-top: 70px; }
