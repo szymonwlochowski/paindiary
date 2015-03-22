@@ -13,9 +13,9 @@
 
 %br
 
-= line_chart Bodypart.all.map{ |b| {name: b.name, data: b.posts.group_by_day(:created_at).sum(:pain_level)} }
+= line_chart Bodypart.all.map{ |b| {name: b.name, data: b.posts.range(params[:period]).group_by_day(:time).sum(:pain_level)} }
 
-= line_chart Post.all.map{ |p| {name: p.bodypart.name, data: {p.created_at.to_date => p.pain_level}}}
+= line_chart Post.range(params[:period]).map{ |p| {name: p.bodypart.name, data: {p.time.to_date => p.pain_level}}}
 
 %br
 %br

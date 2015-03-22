@@ -1,6 +1,6 @@
 class Description < ActiveRecord::Base
 
-  belongs_to :post
+  has_many :characteristics
 
   validates :name, presence: true, uniqueness: true
 

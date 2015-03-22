@@ -3,6 +3,7 @@
 #= require jquery_ujs
 #= require jquery-ui
 #= require jquery-ui/datepicker
+#= require darkly/loader
 #= require turbolinks
 #= require raphael
 #= require morris
@@ -16,4 +17,3 @@
 $ ->
   $('.datepicker').datetimepicker
     sideBySide: true
-    format: 'DD-MM-YYYY LT'
