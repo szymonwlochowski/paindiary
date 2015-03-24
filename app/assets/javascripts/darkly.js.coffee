@@ -17,3 +17,4 @@
 $ ->
   $('.datepicker').datetimepicker
     sideBySide: true
+    format: 'DD-MM-YYYY LT'

@@ -4,6 +4,7 @@
 #= require jquery-ui
 #= require jquery-ui/datepicker
 #= require turbolinks
+#= require darkly/loader
 #= require raphael
 #= require morris
 #= require highcharts
