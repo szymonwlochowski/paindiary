@@ -13,8 +13,9 @@
 #= require moment
 #= require bootstrap-datetimepicker
 #= require forem
+#= require_self
 
-$ ->
+$(document).on 'ready page:load', ->
   $('.datepicker').datetimepicker
     sideBySide: true
     format: 'DD-MM-YYYY LT'

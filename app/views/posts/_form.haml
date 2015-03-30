@@ -3,14 +3,14 @@
     .col-xs-12.col-md-8
       = simple_form_for post, :html => { class: 'form-vertical' } do |f|
         = f.error_notification
+        = f.input :time, as: :string, input_html: {class: 'datepicker'}
         = f.input :title
         = f.input :body
-        = f.input :time, as: :string, input_html: {class: 'datepicker'}
         = f.input :pain_level, collection: 0..10
         = f.input :comments, as: :text
         = f.input :meds, as: :text
         = f.input :non_drugs, as: :text
-        = f.association :descriptions, as: :check_boxes, collection: Description.all
+        = f.association :descriptions, as: :check_boxes, collection: post_descs
         = f.association :bodypart, as: :select
         = f.button :submit, class: 'btn btn-success'
         .form-actions

@@ -12,3 +12,16 @@ Post.all.each do |p|
   p.pain_level = 4 if p.pain_level.nil?
   p.id.nil? ? p.destroy : p.save
 end
+
+
+Description.find_or_create_by(name: 'sharp')
+Description.find_or_create_by(name: 'test')
+Description.find_or_create_by(name: 'test2')
+Description.find_or_create_by(name: 'test3')
+
+Post.create(
+    title: 'test1',
+    body: 'once upon a time, there was little girl...',
+    pain_level: 7,
+    description_ids: [1,2]
+  ) if Post.where(title: 'test1').blank?

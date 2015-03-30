@@ -3,8 +3,8 @@
 #= require jquery_ujs
 #= require jquery-ui
 #= require jquery-ui/datepicker
-#= require turbolinks
 #= require darkly/loader
+#= require turbolinks
 #= require raphael
 #= require morris
 #= require highcharts
@@ -13,8 +13,9 @@
 #= require moment
 #= require bootstrap-datetimepicker
 #= require forem
+#= require_self
 
-$ ->
+$(document).on 'ready page:load', ->
   $('.datepicker').datetimepicker
     sideBySide: true
     format: 'DD-MM-YYYY LT'

@@ -2,6 +2,7 @@ class PostsController < ApplicationController
 
   expose(:post, attributes: :post_params)
   expose(:posts) { Post.order(:created_at).range(params[:period]).page(params[:page]) }
+  expose(:post_descs) { Description.own(current_user.id) }
   expose(:nowaku) { Post.all.order(created_at: :desc) }
 
   def new
@@ -27,7 +28,7 @@ class PostsController < ApplicationController
   private
 
     def new_post_params
-      params.permit(:title) if params.present?
+      params.permit(:title, :body, :description, :pain_level, :time, :comments, :meds, :bodypart_id, {:description_ids => []}) if params.present?
     end
 
     def post_params
@@ -35,3 +36,4 @@ class PostsController < ApplicationController
     end
 
 end
+

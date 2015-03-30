@@ -1,8 +1,9 @@
-= simple_form_for(@description, html: { class: "form-vertical" }) do |f|
+= simple_form_for(description, html: { class: "form-vertical" }) do |f|
   = f.error_notification
 
   .form-inputs
   = f.input :name
+  = f.input :user_id, input_html: {value: current_user.id}, as: :hidden
 
   .form-actions
   = f.button :submit, {:class => 'btn btn-success'}

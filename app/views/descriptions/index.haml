@@ -5,12 +5,13 @@
 %br
 %br
 %row
-  - @descriptions.each do |d|
+  - descriptions.each do |d|
     %p
       = d.name
-      = link_to edit_description_path(d), class: 'btn btn-info btn-xs' do
-        %span.glyphicon.glyphicon-edit{"aria-hidden" => "true"}
-        edit
-      = link_to description_path(d), class: 'btn btn-danger btn-xs', method: :delete do
-        %span.glyphicon.glyphicon-remove{"aria-hidden" => "true"}
-        delete
+      - if current_user.forem_admin? || d.user_id == current_user.id
+        = link_to edit_description_path(d), class: 'btn btn-info btn-xs' do
+          %span.glyphicon.glyphicon-edit{"aria-hidden" => "true"}
+          edit
+        = link_to description_path(d), class: 'btn btn-danger btn-xs', method: :delete do
+          %span.glyphicon.glyphicon-remove{"aria-hidden" => "true"}
+          delete
