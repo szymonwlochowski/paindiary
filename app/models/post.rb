@@ -7,7 +7,7 @@ class Post < ActiveRecord::Base
   has_many :descriptions, through: :characteristics
   belongs_to :bodypart
 
-  validates :body, presence: true, length: { within: 3..10000000 }
+  validates :body, presence: true, length: { within: 4..10000000 }
   validates :title, presence: true, uniqueness: true
 
   scope :range, ->(range) {

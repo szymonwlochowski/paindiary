@@ -20,8 +20,11 @@ Description.find_or_create_by(name: 'test2')
 Description.find_or_create_by(name: 'test3')
 
 Post.create(
+    time: Time.now,
+    #time: Post.created_at
     title: 'test1',
-    body: 'once upon a time, there was little girl...',
+    body: 'once upon a time, there was a little pain...',
     pain_level: 7,
+    bodypart_id: 1,
     description_ids: [1,2]
   ) if Post.where(title: 'test1').blank?
