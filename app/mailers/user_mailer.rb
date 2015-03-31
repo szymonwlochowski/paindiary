@@ -1,5 +1,5 @@
 class UserMailer < ActionMailer::Base
-  default from: 'paindiarymails@gmail.com'
+  default from: 'szymonwlochowski@sendgrid.com'
 
   def welcome_email(user)
     @user = user
