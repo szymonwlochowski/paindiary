@@ -32,6 +32,7 @@ gem 'forem', github: 'radar/forem', branch: 'rails4'
 gem 'forem-bootstrap', github: 'radar/forem-bootstrap'
 gem 'forem-redcarpet', github: 'radar/forem-redcarpet'
 gem 'nokogiri'
+gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
 
 gem 'momentjs-rails', '>= 2.8.1'
 gem 'bootstrap3-datetimepicker-rails', '~> 4.0.0'
