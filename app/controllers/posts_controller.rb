@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
 
   expose(:post, attributes: :post_params)
-  expose(:posts) { Post.order(:created_at).range(params[:period]).page(params[:page]) }
+  expose(:posts) { Post.order(:time).range(params[:period]).page(params[:page]) }
   expose(:post_descs) { Description.own(current_user.id) }
   expose(:nowaku) { Post.all.order(created_at: :desc) }
 
@@ -26,7 +26,7 @@ class PostsController < ApplicationController
   end
 
   def index
-    @post = Post.order(:created_at)
+    #@post = Post.order(:created_at)
 
     respond_to do |format|
       format.html

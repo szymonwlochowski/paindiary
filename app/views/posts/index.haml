@@ -1,6 +1,14 @@
 %script{src: "https://www.google.com/jsapi", type: "text/javascript"}
 %h1 Listing posts
 
+%br
+
+= link_to new_post_path, class: 'btn btn-primary' do
+  %span.glyphicon.glyphicon-pencil{aria: {hidden: true}}
+  New post
+
+%br
+%br
 = '###'
 = link_to 'All entries', posts_path
 |
@@ -12,18 +20,24 @@
 = '###'
 
 %br
+/ Bodypart.all.map{ |b| {name: b.name, data: b.posts.group_by_hour(:created_at).average(:pain_level)} }
+/ You can change below:
+/ - average(name_of_integer_field), sum(name_of_integer_field), count
+/ - group_by_hour to group_by_day , group_by_minute and also determine by which time field (time / created_at / updated_at)
 
-= line_chart Bodypart.all.map{ |b| {name: b.name, data: b.posts.range(params[:period]).group_by_day(:time).sum(:pain_level)} }
+= line_chart Bodypart.all.map{ |b| {name: b.name, data: b.posts.range(params[:period]).group_by_hour(:time).average(:pain_level)} }
+/ line chart above, area chart below
+= area_chart Bodypart.all.map{ |b| {name: b.name, data: b.posts.range(params[:period]).group_by_hour(:time).average(:pain_level)} }
 
-= line_chart Post.range(params[:period]).map{ |p| {name: p.bodypart.name, data: {p.time.to_date => p.pain_level}}}
+/ below is safe but doesn't look nice
+=# line_chart Post.all.map{ |p| {name: p.title, data: { p.time.to_date => p.pain_level } } }
+/ below is safe but doesn't look nice
+=# line_chart Bodypart.all.map{ |b| { name: b.name, data: b.posts.range(params[:period]).map{|p| [p.time.to_date, p.pain_level] }.to_h } }
+/ below is safe but doesn't look nice
+=# area_chart Bodypart.all.map{ |b| { name: b.name, data: b.posts.range(params[:period]).map{|p| [p.time, p.pain_level] }.to_h } }
 
 %br
 %br
-
-= link_to new_post_path, class: 'btn btn-primary' do
-  %span.glyphicon.glyphicon-pencil{aria: {hidden: true}}
-  New post
 
 = render partial: 'post', collection: posts
 = paginate posts
-

@@ -14,11 +14,11 @@ class Post < ActiveRecord::Base
     case range
     when nil
     when "week"
-      where{created_at.gteq 7.days.ago}
+      where{time.gteq 7.days.ago}
     when "month"
-      where{created_at.gteq 1.month.ago}
+      where{time.gteq 1.month.ago}
     when "year"
-      where{created_at.gteq 1.year.ago}
+      where{time.gteq 1.year.ago}
     end
   }
 
