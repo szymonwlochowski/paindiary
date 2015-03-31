@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: "szymonwlochowski@sendgrid.com"
+  default from: 'szymonwlochowski@paindiary.herokuapp.com'
   layout 'mailer'
 end
