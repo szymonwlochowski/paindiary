@@ -22,4 +22,9 @@ class User < ActiveRecord::Base
     UserMailer.welcome_email(self).deliver
   end
 
+  def is_admin?
+    self.forem_admin?
+  end
+
+
 end
