@@ -3,7 +3,7 @@
     .col-xs-12.col-md-8
       = simple_form_for post, :html => { class: 'form-vertical' } do |f|
         = f.error_notification
-        = f.input :time, as: :string, input_html: {class: 'datepicker'}
+        = f.input :time, as: :string, input_html: {class: 'datepicker', value: "#{post.time.present? ? post.time.strftime("%d-%m-%Y %I:%M %p") : nil}"}
         = f.input :title
         = f.input :body
         = f.input :pain_level, collection: 0..10
