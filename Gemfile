@@ -42,6 +42,8 @@ gem 'chartkick', '1.2.0'
 gem 'highcharts-rails'
 gem 'lazy_high_charts'
 
+gem 'railroady'
+
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms => [:mri_21]

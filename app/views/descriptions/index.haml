@@ -15,3 +15,16 @@
         = link_to description_path(d), class: 'btn btn-danger btn-xs', method: :delete do
           %span.glyphicon.glyphicon-remove{"aria-hidden" => "true"}
           delete
+
+= link_to new_description_path, class: 'btn btn-default' do
+  Default
+= link_to new_description_path, class: 'btn btn-primary' do
+  Primary
+= link_to new_description_path, class: 'btn btn-success' do
+  Success
+= link_to new_description_path, class: 'btn btn-info' do
+  Info
+= link_to new_description_path, class: 'btn btn-warning' do
+  Warning
+= link_to new_description_path, class: 'btn btn-danger' do
+  Danger
