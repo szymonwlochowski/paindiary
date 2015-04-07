@@ -13,8 +13,8 @@
       - if user_signed_in?
         = link_to root_path, class: 'navbar-brand' do
           %span.glyphicon.glyphicon-zoom-in{aria: {hidden: "true"}}
-    #bs-example-navbar-collapse-1.collapse.navbar-collapse
-      - if user_signed_in?
+    - if user_signed_in?
+      #bs-example-navbar-collapse-1.collapse.navbar-collapse
         %ul.nav.navbar-nav
           %li
             = link_to root_path do
@@ -36,7 +36,6 @@
             = link_to forem.root_path do
               %span.glyphicon.glyphicon-list
               forums
-      - if user_signed_in?
         %ul.nav.navbar-nav.navbar-right
           %li.dropdown
             %a.dropdown-toggle{aria: {expanded: false}, data: {toggle: "dropdown"}, href: "#", role: "button"}
@@ -44,23 +43,40 @@
               settings
               %span.caret
             %ul.dropdown-menu{role: "menu"}
-              - if user_signed_in?
-                %li
-                  = link_to edit_user_registration_path do
-                    %span.glyphicon.glyphicon-edit
-                    edit profile
-                %li
-                  = link_to destroy_user_session_path do
-                    %span.glyphicon.glyphicon-log-out
-                    log out
-              - else
-                %li
-                  = link_to new_user_session_path do
-                    %span.glyphicon.glyphicon-edit
-                    edit
-                %li
-                  = link_to new_user_registration_path do
-                    %span.glyphicon.glyphicon-log-out
-                    log out
+              %li
+                = link_to about_path do
+                  %span.glyphicon.glyphicon-info-sign
+                  about
+              %li
+                = link_to help_path do
+                  %span.glyphicon.glyphicon-exclamation-sign
+                  help
+              %li
+                = link_to faq_path do
+                  %span.glyphicon.glyphicon-question-sign
+                  faq
+              %li
+                = link_to edit_user_registration_path do
+                  %span.glyphicon.glyphicon-edit
+                  edit profile
+              %li
+                = link_to destroy_user_session_path do
+                  %span.glyphicon.glyphicon-log-out
+                  log out
               %li.divider
               = render 'layouts/layout_menu'
+    - else
+      #bs-example-navbar-collapse-1.collapse.navbar-collapse
+        %ul.nav.navbar-nav.navbar-right
+          %li
+            = link_to about_path do
+              %span.glyphicon.glyphicon-info-sign
+              about
+          %li
+            = link_to help_path do
+              %span.glyphicon.glyphicon-exclamation-sign
+              help
+          %li
+            = link_to faq_path do
+              %span.glyphicon.glyphicon-question-sign
+              faq
