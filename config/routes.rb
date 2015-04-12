@@ -6,7 +6,21 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  resources :posts
+  devise_scope :user do
+    authenticated :user do
+      root 'home#index', as: :authenticated_root
+    end
+
+    unauthenticated do
+      root 'devise/sessions#new', as: :unauthenticated_root
+    end
+  end
+
+  resources :posts do
+    member do
+      get :remove_element
+    end
+  end
   resources :users do
     member do
       put :update_layout
@@ -17,6 +31,7 @@ Rails.application.routes.draw do
   get '/about' => 'home#about'
   get '/help' => 'home#help'
   get '/faq' => 'home#faq'
+  get '/charts' => 'posts#charts'
 
-  root to: 'home#index'
+  root to: 'devise/sessions#new'
 end

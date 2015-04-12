@@ -8,7 +8,7 @@ class Post < ActiveRecord::Base
   belongs_to :bodypart
 
   validates :body, presence: true, length: { within: 4..10000000 }
-  validates :title, presence: true, uniqueness: true
+  validates :title, presence: true
 
   scope :range, ->(range) {
     case range

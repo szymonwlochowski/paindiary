@@ -18,6 +18,9 @@
 |
 = link_to 'Last year', posts_path(period: 'year')
 = '###'
+= link_to 'CSV', posts_path(format: :csv)
+= '###'
+= link_to 'Pivot', charts_path
 
 %br
 / Bodypart.all.map{ |b| {name: b.name, data: b.posts.group_by_hour(:created_at).average(:pain_level)} }

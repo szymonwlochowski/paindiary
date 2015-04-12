@@ -2,12 +2,10 @@
   .row
     .col-sm-6
       %h2 Welcome to PainDiary.
-      %p Free. Reliable. Trustworthy.
-      %br
-      %p.hidden-xs (About?) PainDiary is a web-based application that allows anyone to create an accout and record levels of pain along with comments and other important factors at any time and rate.
-      %p.hidden-xs You experience the same features across all modern devices or web browsers.
-      %p.hidden-xs You will never be charged for using our service. We provide the most reliable pain diary application you have ever seen.
-    .col-sm-6
+      %p
+      Interested?
+      = link_to 'Sign up.', new_registration_path(resource_name)
+      %p Not interested yet? Scroll down
       %h2
       = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
         .form-inputs
@@ -20,3 +18,55 @@
               = f.button :submit, "Log in", class: 'btn btn-success col-xs-3 col-sm-6'
           .col-xs-6.pull-right.col-sm-6
             = render "devise/shared/links"
+
+%br/
+%br/
+%br/
+.container.about
+  .row
+    .col-sm-8.col-sm-offset-2
+      %h1 What makes PainDiary unique?
+  %br
+  .row
+    .col-md-4
+      %span.glyphicon.glyphicon-piggy-bank{:style => "font-size:6em;"}
+      %h2 Free
+      %p We will never charge you for any feature. There are no limits.
+    .col-md-4
+      %span.glyphicon.glyphicon-thumbs-up{:style => "font-size:6em;"}
+      %h2 Trustworthy
+      %p Guaranteed to be safe and private. No leaks allowed.
+    .col-md-4
+      %span.glyphicon.glyphicon-phone{:style => "font-size:6em;"}
+      %h2 Always with you
+      %p Far away from your computer? Use your phone to add an entry.
+  %br/
+  %br/
+  .row
+    .col-md-4
+      %span.glyphicon.glyphicon-cog{:style => "font-size:6em;"}
+      %h2 Modern
+      %p Powered by Ruby on Rails, an open source web application framework.
+    .col-md-4
+      %span.glyphicon.glyphicon-lock{:style => "font-size:6em;"}
+      %h2 Secure
+      %p Follows modern security guidelines.  Your entries are private to you.
+    .col-md-4
+      %span.glyphicon.glyphicon-flash{:style => "font-size:6em;"}
+      %h2 Rapid
+      %p No flashy images, no distractions. Clean and fast.
+  %br/
+  %br/
+  .row
+    .col-md-4
+      %span.glyphicon.glyphicon-king{:style => "font-size:6em;"}
+      %h2 Powerful
+      %p No limit on the amount of your entries.
+    .col-md-4
+      %span.glyphicon.glyphicon-wrench{:style => "font-size:6em;"}
+      %h2 Scalable
+      %p Built on the same engine as GitHub and Twitter.
+    .col-md-4
+      %span.glyphicon.glyphicon-education{:style => "font-size:6em;"}
+      %h2 Open Source
+      %p Publicly accessible source code. Investigate how it's built.
