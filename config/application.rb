@@ -12,5 +12,6 @@ module Paindiary
     config.autoload_paths += %W(#{config.root}/lib)
     #config.assets.version = '1.0'
     config.assets.precompile += (Dir.glob(File.join(Rails.root, 'app/assets/stylesheets/*')).map{ |p| File.basename(p).gsub(/(\.css)?.s[a|c]ss$/, '.css')})
+    config.exceptions_app = self.routes
   end
 end
