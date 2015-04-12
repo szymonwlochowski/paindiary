@@ -3,6 +3,7 @@
  *= require flatly/loader
  *= require posts
  *= require jquery-ui/datepicker
+ *= require pivot
  */
 
 @import "bootstrap-sprockets";
@@ -25,4 +26,12 @@ body { padding-top: 70px; }
       color: #C0392B;
     }
   }
+}
+.node {
+  border: solid 1px white;
+  font: 10px sans-serif;
+  line-height: 12px;
+  overflow: hidden;
+  position: absolute;
+  text-indent: 2px;
 }

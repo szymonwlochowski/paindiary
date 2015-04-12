@@ -1,0 +1,35 @@
+- content_for :javascripts do
+  = javascript_include_tag "posts"
+
+%script{type: 'text/javascript', src: 'https://www.google.com/jsapi'}
+%p Select a CSV file:
+%input{id: 'csv', type: 'file'}
+#output
+:javascript
+  google.load("visualization", "1", {packages:["corechart", "charteditor"]});
+  $(function(){
+    $("#csv").bind("change", function(event){
+      var reader = new FileReader();
+      reader.onload = function(theFile) {
+        try {
+          var input = $.csv.toArrays(theFile.target.result);
+
+        }
+        catch(e) {
+          alert("CSV Parse error.");
+          return;
+        }
+        $("#output").pivotUI( input, {
+          renderers: $.extend(
+            $.pivotUtilities.renderers,
+            $.pivotUtilities.gchart_renderers,
+            $.pivotUtilities.d3_renderers
+            )
+        });
+      };
+      reader.readAsText(event.target.files[0]);
+    });
+  });
+
+
+

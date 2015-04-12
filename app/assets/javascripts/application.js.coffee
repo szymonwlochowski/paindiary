@@ -13,6 +13,11 @@
 #= require moment
 #= require bootstrap-datetimepicker
 #= require forem
+#= require pvt/d3v3
+#= require pvt/jquerycsv
+#= require pvt/pivot
+#= require pvt/gchart
+#= require pvt/d3render
 #= require_self
 
 $(document).on 'ready page:load', ->
