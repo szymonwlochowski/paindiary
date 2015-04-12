@@ -27,8 +27,8 @@ Description.find_or_create_by(name: 'stabbing')
 Post.create(
     time: Time.now,
     #time: Post.created_at
-    title: 'Test Post',
-    body: 'This is a test post.',
+    title: 'Title - test post.',
+    body: 'Test post body.',
     pain_level: 7,
     bodypart_id: 1,
     description_ids: [1,2]

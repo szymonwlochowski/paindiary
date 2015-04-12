@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
 
   expose(:post, attributes: :post_params)
-  expose(:posts) { Post.order(:time).range(params[:period]).page(params[:page]) }
+  expose(:posts) { Post.order(time: :desc).range(params[:period]).page(params[:page]) }
   expose(:post_descs) { Description.own(current_user.id) }
   expose(:nowaku) { Post.all.order(created_at: :desc) }
 
@@ -31,11 +31,13 @@ class PostsController < ApplicationController
   end
 
   def index
-
     respond_to do |format|
       format.html
-      format.csv { send_data posts.as_csv }
+      format.csv { render csv: Post.all }
     end
+  end
+
+  def charts
   end
 
   private

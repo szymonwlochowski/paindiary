@@ -7,8 +7,11 @@ class Post < ActiveRecord::Base
   has_many :descriptions, through: :characteristics
   belongs_to :bodypart
 
+  validates :time, presence: true
   validates :body, presence: true, length: { within: 4..10000000 }
   validates :title, presence: true
+  validates :bodypart, presence: true
+  validates :pain_level, presence: true
 
   scope :range, ->(range) {
     case range
@@ -21,6 +24,19 @@ class Post < ActiveRecord::Base
       where{time.gteq 1.year.ago}
     end
   }
+
+  comma do
+    title
+    body
+    #user :email
+    bodypart :name => 'Bodypart'
+    time
+    pain_level
+    comments
+    meds
+    non_drugs
+    descriptions 'Descriptions' do |d| d.map(&:name).join(', ') end
+  end
 
   def self.total_grouped_by_day(start)
     posts = where(created_at: start.beginning_of_day..Time.zone.today)

@@ -1,10 +1,16 @@
 .post{class: "#{post.id}"}
   %h2
-    = link_to_unless_current post.title, post
+    = link_to post_path(post) do
+      #{post.time.strftime('%d %b %Y %H:%M')} - #{post.title}
+    = "  |  "
+    = link_to edit_post_path(post), class: 'edit' do
+      %span.glyphicon.glyphicon-edit
     = link_to remove_element_post_path(post), class: "postlink", data: { confirm: "Are you sure?" }, remote: :true do
       %span.glyphicon.glyphicon-trash
-  = simple_format post.body
-  = post.pain_level
-  - post.descriptions.each do |d|
-    %p= d.name
+  Body: #{post.body}
+  %br/
+  Comments: #{post.comments}
+  %br/
+  Level: #{post.pain_level}
+  %p= post.descriptions.map(&:name).join(', ')
   = link_to 'load as template', new_post_path(body: post.body, bodypart_id: post.bodypart_id, title: post.title, pain_level: post.pain_level, description_ids: post.description_ids)

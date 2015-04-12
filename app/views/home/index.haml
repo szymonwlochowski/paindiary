@@ -1,4 +1,7 @@
-%h1 Hello.
+%h1
+  Hello,
+  = current_user.email.split('@').first
+
 
 = link_to new_post_path, class: 'btn btn-primary btn-lg' do
   %span.glyphicon.glyphicon-pencil{"aria-hidden" => "true"}
@@ -6,16 +9,8 @@
 = link_to destroy_user_session_path, class: 'btn btn-danger btn-lg' do
   %span.glyphicon.glyphicon-log-out{"aria-hidden" => "true"}
   Log out
-
-%br
-%br
-
-%h2 Known bugs:
-%p none
-%p
-
-%h2 Pending features:
-%p about/help/faq section
-%p ??? - doctor's report (charts + styled csv)
-%p to be done at the end - guest account - guest@mail.com
-%p ??? - podpiac pod paindiaryme
+%br/
+%br/
+%br/
+%h1
+  Here be dragons...

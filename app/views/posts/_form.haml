@@ -6,12 +6,12 @@
         = f.input :time, as: :string, input_html: {class: 'datepicker', value: "#{post.time.present? ? post.time.strftime("%d-%m-%Y %I:%M %p") : nil}"}
         = f.input :title
         = f.input :body
+        = f.association :bodypart, as: :select
         = f.input :pain_level, collection: 0..10
         = f.input :comments, as: :text
         = f.input :meds, as: :text
-        = f.input :non_drugs, as: :text
+        = f.input :non_drugs, as: :text, placeholder: 'yoga, stretching, pressure things'
         = f.association :descriptions, as: :check_boxes, collection: post_descs
-        = f.association :bodypart, as: :select
         = f.button :submit, class: 'btn btn-success'
         .form-actions
 

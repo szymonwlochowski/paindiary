@@ -115,6 +115,8 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.9.1)
+    comma (3.2.4)
+      activesupport (>= 3.0.0)
     commonjs (0.2.7)
     daemons (1.2.2)
     debug_inspector (0.0.2)
@@ -314,6 +316,7 @@ DEPENDENCIES
   bootstrap_form
   chartkick (= 1.2.0)
   coffee-rails (~> 4.0.0)
+  comma
   decent_exposure
   devise
   devise-bootstrap-views
