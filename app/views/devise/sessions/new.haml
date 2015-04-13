@@ -1,10 +1,10 @@
 .container.about
   .row
     .col-sm-8.col-sm-offset-2
-      %h2.text-center Welcome to PainDiary.
+      %h1.text-center Welcome to PainDiary.
       %p.text-center
         Interested?
-        = link_to 'Sign up.', new_registration_path(resource_name)
+        = link_to 'Sign up now.', new_registration_path(resource_name)
       %p.text-center Not interested yet? Scroll down
       %h2
       = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|

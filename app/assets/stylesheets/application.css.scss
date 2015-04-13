@@ -1,6 +1,7 @@
 /*
  *= require_self
  *= require flatly/loader
+ *= require flatly/bootswatch
  *= require posts
  *= require jquery-ui/datepicker
  *= require pivot
@@ -40,4 +41,7 @@ body { padding-top: 70px; }
   overflow: hidden;
   position: absolute;
   text-indent: 2px;
+}
+span.help-block {
+  color: #000;
 }
