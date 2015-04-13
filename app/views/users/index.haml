@@ -1,9 +1,9 @@
-%h1 All users in my app
+%h1 Awesome testers:
 
 %ul
   - users.each do |u|
     %li
-      = u.email
+      = u.email.split('@').first
       = link_to user_path(u), class: 'btn btn-success btn-xs' do
         %span.glyphicon.glyphicon-eye-open{"aria-hidden" => "true"}
         show

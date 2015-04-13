@@ -48,7 +48,7 @@ $ ->
                   <h3>#{message}</h3>
                 </div>
                 <div class="modal-body">
-                  <p>Are you sure?</p>
+                  <p>Do you want to delete that post?</p>
                 </div>
                 <div class="modal-footer">
                   <a data-dismiss="modal" class="btn">Cancel</a>

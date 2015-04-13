@@ -2,11 +2,10 @@
   = f.error_notification
 
   .form-inputs
-  = f.input :name
+  = f.input :name, placeholder: 'your description'
   = f.input :user_id, input_html: {value: current_user.id}, as: :hidden
 
   .form-actions
   = f.button :submit, {:class => 'btn btn-success'}
   = link_to descriptions_path, class: 'btn btn-default pull-right' do
-    %span.glyphicon.glyphicon-remove{"aria-hidden" => "true"}
     Discard

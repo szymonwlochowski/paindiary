@@ -5,7 +5,7 @@
       = simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
         = f.error_notification
         .form-inputs
-          = f.input :email, required: true, autofocus: true
+          = f.input :email, required: true, autofocus: true,  placeholder: 'your@email.here'
         .form-actions
           = f.button :submit, "Reset", class: 'btn btn-success'
           = link_to root_path, class: 'btn btn-default pull-right' do

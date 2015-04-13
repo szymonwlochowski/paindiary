@@ -1,12 +1,6 @@
-- content_for :head do
-  :javascript
-    $(function() {
-      init_chart();
-    })
 %h1
-  Show
-  = user.email
-  profile
-
-#pain_records{data: {records: records_chart_data}}
-= content_tag :div, "", id: "pain_records", data: {records: records_chart_data}
+  = user.email.split('@').first
+  profile is empty.
+  %br/
+  %br/
+  Nothing to see here, move on.

@@ -3,18 +3,20 @@
     .col-xs-12.col-md-8
       = simple_form_for post, :html => { class: 'form-vertical' } do |f|
         = f.error_notification
-        = f.input :time, as: :string, input_html: {class: 'datepicker', value: "#{post.time.present? ? post.time.strftime("%d-%m-%Y %I:%M %p") : nil}"}
-        = f.input :title
-        = f.input :body
+        = f.input :time, as: :string, input_html: {class: 'datepicker', value: "#{post.time.present? ? post.time.strftime("%d-%m-%Y %I:%M %p") : nil}"}, placeholder: 'click to show calendar'
+        = f.input :title, placeholder: 'required. examples: back pain/foot pain/headache'
+        = f.input :body, placeholder: 'required. examples: lasted for 4 hours'
         = f.association :bodypart, as: :select
         = f.input :pain_level, collection: 0..10
-        = f.input :comments, as: :text
-        = f.input :meds, as: :text
-        = f.input :non_drugs, as: :text, placeholder: 'yoga, stretching, pressure things'
+        = f.input :comments, as: :text, placeholder: 'not required. examples: weather, any notes'
+        = f.input :meds, as: :text, placeholder: 'not required. examples: medicines you took to relieve the pain'
+        = f.input :non_drugs, as: :text, placeholder: 'not required. examples: yoga, stretching, injury support'
         = f.association :descriptions, as: :check_boxes, collection: post_descs
-        = f.button :submit, class: 'btn btn-success'
         .form-actions
-
-          = link_to posts_path, class: 'btn btn-default pull-right' do
-            %span.glyphicon.glyphicon-remove{"aria-hidden" => "true"}
-            Discard
+        = f.button :submit, class: 'btn btn-success' do
+          %span.glyphicon.glyphicon-ok{"aria-hidden" => "true"}
+          Create Post
+        = link_to posts_path, class: 'btn btn-default pull-right' do
+          Discard
+  %br/
+  %br/

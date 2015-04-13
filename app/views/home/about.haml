@@ -1,68 +1,32 @@
 .container.about
   .row
-    .col-sm-8.col-sm-offset-2
-      %h1 What makes PainDiary unique?
-  %br
+    .col-md-5
+      %h3 What is that?
+      %p PainDiary is a web-based application that allows anyone to create an account and record levels of pain along with comments and other important factors at any time and rate.
+      %p It is helpful for people who experience chronic pain and would like to discover any possible patterns. Or for those who are just tired of having tons of printed pain diary forms.
+      %p You experience the same features across all modern devices or web browsers.
+    .col-md-5.col-md-offset-1
+      %h3 Privacy matters
+      %p If you are concerned about your privacy, you'll be relieved to learn that we don't ask you for your real name.
+      %p
+        In fact, we don't even force you to use your real e-mail address - feel free to use anonymousing services such as
+        = link_to '10minutemail', 'http://10minutemail.com', target:'_blank'
+        or even type any mail you want, just make sure it is of valid format (with @ and .), but then you will not have a chance recover your password!
+      %p Oh, and you will miss our beautiful welcome mail, too. You don't want to miss it.
   .row
-    .col-md-4
-      %span.glyphicon.glyphicon-piggy-bank{:style => "font-size:6em;"}
-      %h2 Free
-      %p We will never charge you for any feature. There are no limits.
-    .col-md-4
-      %span.glyphicon.glyphicon-thumbs-up{:style => "font-size:6em;"}
-      %h2 Trustworthy
-      %p Guaranteed to be safe and private. No leaks allowed.
-    .col-md-4
-      %span.glyphicon.glyphicon-phone{:style => "font-size:6em;"}
-      %h2 Always with you
-      %p Far away from your computer? Use your phone to add an entry.
-  %br/
-  %br/
-  .row
-    .col-md-4
-      %span.glyphicon.glyphicon-cog{:style => "font-size:6em;"}
-      %h2 Modern
-      %p Powered by Ruby on Rails, an open source web application framework.
-    .col-md-4
-      %span.glyphicon.glyphicon-lock{:style => "font-size:6em;"}
-      %h2 Secure
-      %p Follows modern security guidelines.  Your entries are private to you.
-    .col-md-4
-      %span.glyphicon.glyphicon-flash{:style => "font-size:6em;"}
-      %h2 Rapid
-      %p No flashy images, no distractions. Clean and fast.
-  %br/
-  %br/
-  .row
-    .col-md-4
-      %span.glyphicon.glyphicon-king{:style => "font-size:6em;"}
-      %h2 Powerful
-      %p No limit on the amount of your entries.
-    .col-md-4
-      %span.glyphicon.glyphicon-wrench{:style => "font-size:6em;"}
-      %h2 Scalable
-      %p Built on the same engine as GitHub and Twitter.
-    .col-md-4
-      %span.glyphicon.glyphicon-education{:style => "font-size:6em;"}
-      %h2 Open Source
-      %p Publicly accessible source code. Investigate how it's built.
-  %br/
-  %br/
-  %br/
-  %p PainDiary is a web-based application that allows anyone to create an accout and record levels of pain along with comments and other important factors at any time and rate.
-  %p You experience the same features across all modern devices or web browsers.
-  %p
-    If you are concerned about your privacy, you'll be relieved to learn that we don't ask you for your real name. In fact, we don't even force you to use your real e-mail address - feel free to use anonymousing services such as
-    = link_to '10minutemail', 'http://10minutemail.com', target:'_blank'
-  %p We are here for you and if you suspect your account has been compromised - please let us know, we will work together to find out if that's true. Please remember that you can download your entries history with all the details at any time.
-
-  %h2 Passwords
-  %p If you enter incorrect password more than 3 times, your account will be locked for an hour. It prevents others from using brute-force attacks to gain access to your account.
-  %p You are free to choose any password, as long as it has at least 5 and at most 128 characters.
-  %p Why?
-  %p Because simple (to remember) passwords can be secure as well. There is no need to use a password similar to 'p4sSvv0rD' if you can use 'FlowersAreBeautiful' (please do NOT use these passwords on our website). The former is hard to remember, hard to type and surprisingly less secure than the second one.
-  %p
-    = link_to 'How Secure Is My Password?', 'http://www.howsecureismypassword.net', target:'_blank'
-    shows that 'p4sSvv0rD' could be cracked in 39 days, while 'FlowersAreBeautiful' would take around 3 quadrillion years (yes, 3 000 000 000 000 000 years. How long is that? Well, if you had 3 quadrillion pounds you could write a check for everyone in Great Britain for over 49 million pounds and you could still afford to give 350 000 pounds for every person in the world.)
-  %br/
-  %br/
+    .col-md-5
+      %h3 Passwords matter, too
+      %p If you enter incorrect password more than 3 times, your account will be locked for an hour. It prevents others from using brute-force attacks to gain access to your account.
+      %p You are free to choose any password, as long as it has at least 5 and at most 128 characters.
+      %p Simple (to remember) passwords can be secure as well. There is no need to use a password similar to 'p4sSvv0rD' if you can use 'FlowersAreBeautiful' (please do NOT use these passwords on our website). The former is hard to remember, hard to type and surprisingly less secure than the second one.
+    .col-md-5.col-md-offset-1
+      %h3 You're lying about passwords.
+      %p
+        Nope. If you don't believe me, have a look yourself:
+      %p
+        = link_to 'How Secure Is My Password?', 'http://www.howsecureismypassword.net', target:'_blank'
+        shows that 'p4sSvv0rD' could be cracked in 39 days, while 'FlowersAreBeautiful' would take around 3 quadrillion years.
+      %p
+        Yes, 3 000 000 000 000 000 years. How long is that? Well, if you had 3 quadrillion pounds you could write a check for everyone in Great Britain for over 49 million pounds and you could still afford to give 350 000 pounds for every person in the world.
+      %br/
+      %br/
