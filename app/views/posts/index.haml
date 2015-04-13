@@ -1,5 +1,7 @@
 %script{src: "https://www.google.com/jsapi", type: "text/javascript"}
-%h1 Listing posts
+%h1
+  Hello,
+  = current_user.email.split('@').first
 
 %br
 
@@ -9,23 +11,24 @@
 
 %br
 %br
-= '###'
-= link_to 'All entries', posts_path
-|
-= link_to 'Last week', posts_path(period: 'week')
-|
-= link_to 'Last month', posts_path(period: 'month')
-|
-= link_to 'Last year', posts_path(period: 'year')
-= '###'
-= link_to 'Download CSV', posts_path(format: :csv)
-= '###'
-= link_to 'Pivot charts (CSV needed & refresh after clicking)', charts_path
+
+%p.text-center
+  = link_to 'Download CSV', posts_path(format: :csv)
+  ||
+  = link_to 'Pivot charts (CSV needed & refresh after clicking)', charts_path
 
 %br
 = line_chart Bodypart.all.map{ |b| {name: b.name, data: b.posts.own(current_user.id).range(params[:period]).group_by_hour(:time).average(:pain_level)} }
 / line chart above, area chart below
 / = area_chart Bodypart.all.map{ |b| {name: b.name, data: b.posts.range(params[:period]).group_by_hour(:time).average(:pain_level)} }
+%p.text-center
+  = link_to 'All entries', posts_path
+  ||
+  = link_to 'Last week', posts_path(period: 'week')
+  ||
+  = link_to 'Last month', posts_path(period: 'month')
+  ||
+  = link_to 'Last year', posts_path(period: 'year')
 
 %br
 %br

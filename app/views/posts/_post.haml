@@ -2,7 +2,6 @@
   %h2
     = link_to post_path(post) do
       #{post.time.strftime('%d %b %Y %H:%M')} - #{post.title}
-    = "  |  "
     = link_to edit_post_path(post), class: 'edit' do
       %span.glyphicon.glyphicon-edit
     = link_to remove_element_post_path(post), class: "postlink", data: { confirm: "Are you sure?" }, remote: :true do

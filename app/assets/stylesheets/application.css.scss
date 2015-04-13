@@ -7,14 +7,14 @@
  *= require pivot
  */
 
-@import "bootstrap-sprockets";
-@import "bootstrap";
-@import 'bootstrap-datetimepicker';
-@import 'forem/base';
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+ @import 'bootstrap-datetimepicker';
+ @import 'forem/base';
 
 
-body { padding-top: 70px; }
-.about .col-md-4 {
+ body { padding-top: 70px; }
+ .about .col-md-4 {
   text-align: center;
 }
 .modal-dialog {
@@ -22,16 +22,12 @@ body { padding-top: 70px; }
 }
 .post {
   a.postlink{
-    span {
-      font-size: 16px;
-      color: #C0392B;
-    }
+    color: #C0392B;
+    margin-left: 0.2em;
   }
   a.edit{
-    span {
-      font-size: 16px;
-      color: #1200F1;
-    }
+    color: #1200F1;
+    margin-left: 0.5em;
   }
 }
 .node {
@@ -44,4 +40,12 @@ body { padding-top: 70px; }
 }
 span.help-block {
   color: #000;
+}
+a.descriptiondelete {
+  margin-left: 0.2em;
+  color: #C0392B;
+}
+a.descriptionedit {
+  margin-left: 1em;
+  color: #1200F1;
 }
