@@ -12,14 +12,13 @@ Bodypart.create(name: "Upper limbs") if Bodypart.where(name: "Upper limbs").blan
 Bodypart.create(name: "Lower limbs") if Bodypart.where(name: "Lower limbs").blank?
 Bodypart.create(name: "Cavities") if Bodypart.where(name: "Cavities").blank?
 Post.all.each do |p|
-  p.bodypart = Bodypart.first
+  p.bodypart = Bodypart.first if p.bodypart.nil?
   p.pain_level = 4 if p.pain_level.nil?
   p.id.nil? ? p.destroy : p.save
 end
 
 
 Description.find_or_create_by(name: 'burning')
-Description.find_or_create_by(name: 'chronic')
 Description.find_or_create_by(name: 'sharp')
 Description.find_or_create_by(name: 'stabbing')
 
@@ -28,8 +27,8 @@ Post.create(
     time: Time.now,
     #time: Post.created_at
     title: 'Title - test post.',
-    body: 'Test post body.',
+    body: 'Test post body. You can remove it after creating your own one.',
     pain_level: 7,
     bodypart_id: 1,
     description_ids: [1,2]
-  ) if Post.where(title: 'Test Post').blank?
+  ) if Post.where(title: 'Title - test post.').blank?

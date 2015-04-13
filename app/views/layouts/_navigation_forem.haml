@@ -15,14 +15,10 @@
             = link_to main_app.root_path do
               %span.glyphicon.glyphicon-home
               home
-          %li
-            = link_to main_app.users_path do
-              %span.glyphicon.glyphicon-user
-              users
-          %li
-            = link_to main_app.posts_path do
-              %span.glyphicon.glyphicon-file
-              posts
+          /%li
+          /  = link_to main_app.posts_path do
+          /    %span.glyphicon.glyphicon-file
+          /    posts
           %li
             = link_to main_app.descriptions_path do
               %span.glyphicon.glyphicon-list
@@ -31,6 +27,10 @@
             = link_to forem.root_path do
               %span.glyphicon.glyphicon-comment
               forums
+          %li
+            = link_to main_app.users_path do
+              %span.glyphicon.glyphicon-user
+              users
       %ul.nav.navbar-nav.navbar-right
         %li.dropdown
           %a.dropdown-toggle{aria: {expanded: false}, data: {toggle: "dropdown"}, href: "#", role: "button"}

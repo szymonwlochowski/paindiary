@@ -1,5 +1,5 @@
 Forem.user_class = "User"
-Forem.email_from_address = "please-change-me@example.com"
+Forem.email_from_address = "szymonwlochowski@paindiary.herokuapp.com"
 
 Forem.per_page = 20
 

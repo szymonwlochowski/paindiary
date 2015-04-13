@@ -23,7 +23,7 @@
 = link_to 'Pivot charts (CSV needed & refresh after clicking)', charts_path
 
 %br
-= line_chart Bodypart.all.map{ |b| {name: b.name, data: b.posts.range(params[:period]).group_by_hour(:time).average(:pain_level)} }
+= line_chart Bodypart.all.map{ |b| {name: b.name, data: b.posts.own(current_user.id).range(params[:period]).group_by_hour(:time).average(:pain_level)} }
 / line chart above, area chart below
 / = area_chart Bodypart.all.map{ |b| {name: b.name, data: b.posts.range(params[:period]).group_by_hour(:time).average(:pain_level)} }
 

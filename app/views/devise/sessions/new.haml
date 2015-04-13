@@ -1,11 +1,11 @@
-.container-fixed
+.container.about
   .row
-    .col-sm-6
-      %h2 Welcome to PainDiary.
-      %p
-      Interested?
-      = link_to 'Sign up.', new_registration_path(resource_name)
-      %p Not interested yet? Scroll down
+    .col-sm-8.col-sm-offset-2
+      %h2.text-center Welcome to PainDiary.
+      %p.text-center
+        Interested?
+        = link_to 'Sign up.', new_registration_path(resource_name)
+      %p.text-center Not interested yet? Scroll down
       %h2
       = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
         .form-inputs
@@ -13,10 +13,10 @@
           = f.input :password, required: false
           = f.input :remember_me, as: :boolean if devise_mapping.rememberable?
         .row
-          .col-sm-6
+          .col-sm-8
             .form-actions
               = f.button :submit, "Log in", class: 'btn btn-success col-xs-3 col-sm-6'
-          .col-xs-6.pull-right.col-sm-6
+          .col-xs-8.pull-right.col-sm-4.text-right
             = render "devise/shared/links"
 
 %br/
@@ -25,7 +25,7 @@
 .container.about
   .row
     .col-sm-8.col-sm-offset-2
-      %h1 What makes PainDiary unique?
+      %h1.text-center What makes PainDiary unique?
   %br
   .row
     .col-md-4

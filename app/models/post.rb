@@ -13,6 +13,7 @@ class Post < ActiveRecord::Base
   validates :bodypart, presence: true
   validates :pain_level, presence: true
 
+  scope :own, ->(current_user) { where{ user_id.eq current_user } }
   scope :range, ->(range) {
     case range
     when nil

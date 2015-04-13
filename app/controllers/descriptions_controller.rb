@@ -5,7 +5,7 @@ class DescriptionsController < ApplicationController
 
   def create
     if description.save
-      redirect_to descriptions_path
+      redirect_to descriptions_path, notice: 'You created a description.'
     else
       render :new
     end
@@ -13,10 +13,15 @@ class DescriptionsController < ApplicationController
 
   def update
     if description.save
-      redirect_to description_path(description)
+      redirect_to descriptions_path, notice: 'You updated a description.'
     else
       render :edit
     end
+  end
+
+  def destroy
+    description.destroy
+    redirect_to descriptions_path, alert: 'You deleted a description.'
   end
 
 
