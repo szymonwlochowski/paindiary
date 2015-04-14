@@ -6,10 +6,34 @@
       %span.glyphicon.glyphicon-edit
     = link_to remove_element_post_path(post), class: "postlink", data: { confirm: "Are you sure?" }, remote: :true do
       %span.glyphicon.glyphicon-trash
-  #{post.bodypart.name}: #{post.body}
+  %strong Bodypart:
+  #{post.bodypart.name}
   %br/
-  Comments: #{post.comments}
+
+  %strong Content:
+  #{post.body}
   %br/
-  Level: #{post.pain_level}
-  %p= post.descriptions.map(&:name).join(', ')
+
+  %strong Pain level:
+  #{post.pain_level}
+  %br/
+
+  - if post.meds.present?
+    %strong Meds:
+    #{post.meds}
+    %br/
+
+  - if post.non_drugs.present?
+    %strong Non drugs:
+    #{post.non_drugs}
+    %br/
+
+  - if post.comments.present?
+    %strong Comments:
+    #{post.comments}
+    %br/
+
+  %p
+    %strong Description:
+    = post.descriptions.map(&:name).join(', ')
   = link_to 'load as template', new_post_path(body: post.body, bodypart_id: post.bodypart_id, title: post.title, pain_level: post.pain_level, description_ids: post.description_ids)
