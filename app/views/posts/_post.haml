@@ -6,7 +6,7 @@
       %span.glyphicon.glyphicon-edit
     = link_to remove_element_post_path(post), class: "postlink", data: { confirm: "Are you sure?" }, remote: :true do
       %span.glyphicon.glyphicon-trash
-  Body: #{post.body}
+  #{post.bodypart.name}: #{post.body}
   %br/
   Comments: #{post.comments}
   %br/
